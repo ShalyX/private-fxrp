@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "network": "coston2",
+  "chainId": 114,
+  "deployedAtBlock": 33421926,
+  "preflightBlock": 33421878,
+  "deployer": "0xd0C3370EcAE1Ea7b2d4aa1B03673439992692ef1",
+  "policyId": "0x68a5c10d48bd9281c62c075d87beb0b5673f8b1eaba8f87dc5a9257267fe402c",
+  "policy": {
+    "issuer": "0x4ed30418Dce6C743b4b1F0da4DB33D9927699456",
+    "rulesHash": "0x2a2d90e93b757f8cb48fe251db893f1f70b61dcf05517d838d1253b79102cd54",
+    "maxPriceAgeSeconds": 120
+  },
+  "protocol": {
+    "flareContractsRegistry": "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+    "assetManagerFxrp": "0xc1Ca88b937d0b528842F95d5731ffB586f4fbDFA",
+    "fxrp": "0x0b6A3645c240605887a5532109323A3E12273dc7",
+    "ftsoV2": "0xC4e9c78EA53db782E28f28Fdf80BaF59336B304d",
+    "flareTeeManager": "0x1a9C4A0f9D76c0b1D91d22E24E573a9b377618aE",
+    "fxrpSymbol": "FTestXRP",
+    "fxrpDecimals": 6,
+    "codeHashes": {
+      "flareContractsRegistry": "0xb20be170789869938c02e41d0957f3aefacfee35eb2972cd82c6deb18f020a93",
+      "assetManagerFxrp": "0xcd0ef623a8b5532c9c783e756038e492abce5fda7c3ee6597b4ddddcbfbb46ba",
+      "fxrp": "0x2a345fa347d8d046bfd19e17318727830da91dea31a3e223c0eb0af248d446f0",
+      "ftsoV2": "0xd8d80eb8462ab0dbe7d2f6981ee8a1a3c526cb53cebcc589e81ed15f33193e37",
+      "flareTeeManager": "0xbe17dcce07109a9722c3795425f528476479c5cb02d2455e7d059dacf27421bd"
+    }
+  },
+  "contracts": {
+    "policyRegistry": "0x188D706c69835826c4cc92616A959CA8b636Fb8b",
+    "accessRegistry": "0xE095076FD5Ba799Cf13b3ac073B7186cCD302174",
+    "xrpUsdOracle": "0xb494611d9985c2090d566B6F8D092517170bB6D7",
+    "privateAccessInstructionSender": "0xd8429a3e52cbaE7a7B39768CF5e5778047f9f177",
+    "privateFxrpVault": "0xF4092F5b4Ed4A3f9dAF615211719FBeD4e11EeF6"
+  },
+  "transactions": {
+    "policyRegistryDeployment": "0x99736a0c076f54e8897fbd50cf9181bd76368c80ada47c44ce02d041d34ab744",
+    "accessRegistryDeployment": "0xfdb91f74aee58425a680e437509403390216212f8f49df138cc3835e6592ed0d",
+    "oracleDeployment": "0x98ec53a162069a03420d89044864415ba4898b83478aeafc0f8f27ca5ca03534",
+    "instructionSenderDeployment": "0xf6a74447b8af82cc948597fb1de529730ebed332a096606ba5d592720e96a6fc",
+    "policyCreation": "0x7be84c811f462cc377b4e77b149822ae0d991f23848e471bda72a5d2e570e818",
+    "vaultDeployment": "0xcbd1dce2d210f7b5f5bd1f8212e4f90aa5cb162c233289d1bdccd81e988a16e8",
+    "teeSignerRegistration": null,
+    "liveAccessRequest": "0x1864c02eff9903c44265bea52902426ee40f19db14c8012c28ee4c8cb6002ffa",
+    "liveAccessRelay": "0xdfa4c938a99ea82351568b44a8a0ce4957f4971a44cad87948e0ae344d6e8c71"
+  },
+  "fcc": {
+    "extensionRegistration": "registered",
+    "status": "PRODUCTION",
+    "extensionId": 65835,
+    "teeSigner": "0x7820af00DDB9176150B27edF95D8FB191e555108",
+    "callbackUrl": "https://augusta-unjoking-sarahi.ngrok-free.dev",
+    "registrationEvidenceBlock": 33637184,
+    "liveProof": {
+      "applicant": "0xd0C3370EcAE1Ea7b2d4aa1B03673439992692ef1",
+      "instructionId": "0x3b878dc622c2dfecc1ca86a06c236a71847c698d1a85309db6f4c7d50ba727b5",
+      "requestTransaction": "0x1864c02eff9903c44265bea52902426ee40f19db14c8012c28ee4c8cb6002ffa",
+      "relayTransaction": "0xdfa4c938a99ea82351568b44a8a0ce4957f4971a44cad87948e0ae344d6e8c71",
+      "evidenceBlock": 33637745
+    },
+    "nextAction": "Prepare the public repository and hackathon submission."
+  }
+}

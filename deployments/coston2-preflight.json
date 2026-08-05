@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "network": "coston2",
+  "chainId": 114,
+  "blockNumber": 33420166,
+  "protocol": {
+    "flareContractsRegistry": "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+    "assetManagerFxrp": "0xc1Ca88b937d0b528842F95d5731ffB586f4fbDFA",
+    "fxrp": "0x0b6A3645c240605887a5532109323A3E12273dc7",
+    "fxrpSymbol": "FTestXRP",
+    "fxrpDecimals": 6,
+    "ftsoV2": "0xC4e9c78EA53db782E28f28Fdf80BaF59336B304d",
+    "flareTeeManager": "0x1a9C4A0f9D76c0b1D91d22E24E573a9b377618aE"
+  },
+  "codeHashes": {
+    "flareContractsRegistry": "0xb20be170789869938c02e41d0957f3aefacfee35eb2972cd82c6deb18f020a93",
+    "assetManagerFxrp": "0xcd0ef623a8b5532c9c783e756038e492abce5fda7c3ee6597b4ddddcbfbb46ba",
+    "fxrp": "0x2a345fa347d8d046bfd19e17318727830da91dea31a3e223c0eb0af248d446f0",
+    "ftsoV2": "0xd8d80eb8462ab0dbe7d2f6981ee8a1a3c526cb53cebcc589e81ed15f33193e37",
+    "flareTeeManager": "0xbe17dcce07109a9722c3795425f528476479c5cb02d2455e7d059dacf27421bd"
+  }
+}

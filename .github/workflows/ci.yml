@@ -1,0 +1,58 @@
+name: Verify
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  contracts-and-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            web/package-lock.json
+      - run: npm ci
+      - run: npm test
+      # Hardhat 2 retains legacy development-only advisories. Runtime
+      # dependencies remain a blocking audit gate until the Hardhat 3 migration.
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm ci
+        working-directory: web
+      - run: npm test
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+      - run: npm audit --audit-level=high
+        working-directory: web
+
+  fcc-extension:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: fcc-extension/typescript/package-lock.json
+      - run: npm ci
+        working-directory: fcc-extension/typescript
+      - run: npm run typecheck
+        working-directory: fcc-extension/typescript
+      - run: npm test
+        working-directory: fcc-extension/typescript
+      - run: npm audit --audit-level=high
+        working-directory: fcc-extension/typescript
+      - run: ./scripts/test-conformance.sh typescript
+        working-directory: fcc-extension

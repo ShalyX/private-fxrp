@@ -1,0 +1,40 @@
+{
+  "name": "private-fxrp-access-desk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Confidential policy evaluation and reusable access decisions for FXRP products on Flare.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "demo": "hardhat run scripts/demo.js",
+    "preflight:coston2": "node scripts/preflight-coston2.js",
+    "ready:deployer:coston2": "node scripts/check-deployer-coston2.js",
+    "deploy:coston2:secure": "bash scripts/secure-deploy-coston2.sh",
+    "deploy:coston2": "hardhat run scripts/deploy-coston2.js --network coston2",
+    "finalize:fcc:coston2": "hardhat run scripts/finalize-fcc-coston2.js --network coston2",
+    "live-access:coston2": "node scripts/run-live-coston2-access.js",
+    "export:web:coston2": "node scripts/export-web-config.js",
+    "evidence:coston2": "node scripts/collect-coston2-evidence.js",
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "web:test": "npm --prefix web test",
+    "web:check": "npm --prefix web run check",
+    "check:fcc": "npm --prefix fcc-extension/typescript run typecheck && npm --prefix fcc-extension/typescript test",
+    "test:fcc:conformance": "cd fcc-extension && ./scripts/test-conformance.sh typescript",
+    "test": "hardhat test",
+    "test:contracts": "hardhat test test/contracts/*.test.js",
+    "test:extension": "hardhat test test/extension/*.test.js",
+    "check": "npm run compile && npm test && npm run web:check"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.2",
+    "@nomicfoundation/hardhat-ethers": "^3.1.3",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.2",
+    "hardhat": "^2.29.0",
+    "mocha": "^11.7.6",
+    "solc": "^0.8.36"
+  }
+}

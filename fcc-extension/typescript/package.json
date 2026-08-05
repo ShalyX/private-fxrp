@@ -1,0 +1,21 @@
+{
+  "name": "extension-scaffold",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript implementation of the Flare Confidential Compute extension scaffold",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "viem": "2.55.10"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2",
+    "vitest": "^4.1.10"
+  }
+}

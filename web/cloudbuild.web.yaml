@@ -1,0 +1,12 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --pull
+      - --no-cache
+      - --tag
+      - us-west1-docker.pkg.dev/project-d79f9e62-d832-4631-9f6/private-fxrp/private-fxrp-web:v0.5.0
+      - .
+images:
+  - us-west1-docker.pkg.dev/project-d79f9e62-d832-4631-9f6/private-fxrp/private-fxrp-web:v0.5.0
+timeout: 1200s

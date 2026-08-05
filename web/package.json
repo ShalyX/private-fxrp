@@ -1,0 +1,33 @@
+{
+  "name": "private-fxrp-access-desk-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/index.js",
+    "dev:web": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/index.js",
+    "test": "vitest run",
+    "check": "npm test && npm run build"
+  },
+  "dependencies": {
+    "@noble/curves": "1.9.7",
+    "ethers": "6.17.0",
+    "express": "5.1.0",
+    "express-rate-limit": "8.6.1",
+    "helmet": "8.1.0",
+    "lucide-react": "0.468.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "@vitejs/plugin-react": "^5.1.4",
+    "concurrently": "^10.0.4",
+    "vite": "^7.3.6",
+    "vitest": "^4.1.10"
+  }
+}

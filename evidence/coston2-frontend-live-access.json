@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "network": "coston2",
+  "chainId": 114,
+  "source": "public-web-frontend",
+  "applicationUrl": "https://private-fxrp-access-desk-351242117184.us-west1.run.app/",
+  "applicant": "0xd0C3370EcAE1Ea7b2d4aa1B03673439992692ef1",
+  "result": "PRIVATE_ACCESS_PASS_ISSUED",
+  "requestTransaction": "0x0c9d0b18ee4f62440e89b795c24bf57b374018d12268cad3ab63aabbe5625f77",
+  "relayTransaction": "0xdbe8d29147da5677fe158bd004b8f421647780ec756aff8d32b2429768262030",
+  "recordedAt": "2026-08-05T00:23:39Z",
+  "privacy": {
+    "credentialAttributesRecorded": false,
+    "plaintextRequestRecorded": false,
+    "ciphertextRecorded": false
+  }
+}
