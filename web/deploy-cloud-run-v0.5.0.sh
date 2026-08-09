@@ -109,7 +109,7 @@ SERVICE_URL="$(
 
 curl --fail --silent --show-error "$SERVICE_URL/health"
 curl --fail --silent --show-error "$SERVICE_URL/api/tee/info" >/dev/null
-curl --fail --silent --show-error "$SERVICE_URL/" | grep -q "Private FXRP Access Desk"
+curl --fail --silent --show-error "$SERVICE_URL/" | grep -q "Veyra"
 
 echo
 echo "PRIVATE_FXRP_WEB_DEPLOYED url=$SERVICE_URL image=$IMAGE_BASE@$IMAGE_DIGEST"

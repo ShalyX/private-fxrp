@@ -1,11 +1,13 @@
-# Private FXRP Access Desk
+# Veyra
+
+Private FXRP access infrastructure.
 
 Confidential policy evaluation and reusable wallet access decisions for FXRP
 products on Flare.
 
 **Live Coston2 app:** https://private-fxrp-access-desk-351242117184.us-west1.run.app/
 
-Private FXRP Access Desk lets an institution prove that a wallet satisfies an
+Veyra lets an institution prove that a wallet satisfies an
 access policy without publishing the underlying jurisdiction, investor
 category, or risk score. The resulting onchain pass can be reused by FXRP
 products until its limit or expiry is reached.

@@ -49,6 +49,8 @@ main { min-width: 0; }
 .brand-copy { display: flex; gap: 8px; align-items: baseline; }
 .brand-name { font-weight: 700; font-size: 17px; }
 .brand-section { color: var(--muted); font-size: 14px; }
+.brand-mark { overflow: hidden; }
+.brand-mark img { width: 24px; height: 24px; display: block; object-fit: cover; border-radius: 6px; }
 .topbar-actions { display: flex; align-items: center; gap: 12px; }
 .network-pill, .wallet-control {
   display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px;

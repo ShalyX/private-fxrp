@@ -24,7 +24,7 @@
 
 **Say:**
 
-> Private FXRP Access Desk separates private evaluation from public enforcement. An issuer signs a wallet-bound credential, and the applicant controls the request from the browser.
+> Veyra separates private evaluation from public enforcement. An issuer signs a wallet-bound credential, and the applicant controls the request from the browser.
 
 ### 0:18–0:32 — Issuer credential
 
@@ -72,12 +72,12 @@
 
 **Say:**
 
-> This is a live Coston2 deployment using FCC extension 65835. Private FXRP Access Desk turns confidential eligibility into a composable access primitive for Flare applications.
+> This is a live Coston2 deployment using FCC extension 65835. Veyra turns confidential eligibility into a composable access primitive for Flare applications.
 
 ## End card
 
 ```text
-Private FXRP Access Desk
+Veyra — Private FXRP access infrastructure
 Confidential eligibility for FXRP applications
 
 Coston2 • Flare Confidential Compute • FTSOv2

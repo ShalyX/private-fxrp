@@ -1,4 +1,4 @@
-# Private FXRP Access Desk
+# Veyra — Private FXRP Access Infrastructure
 
 ## One-line pitch
 
@@ -15,7 +15,7 @@ and forces each operator to handle sensitive data.
 
 ## Solution
 
-Private FXRP Access Desk separates private evaluation from public enforcement:
+Veyra separates private evaluation from public enforcement:
 
 1. An operator commits a versioned policy hash on Coston2.
 2. A trusted issuer signs a credential bound to the applicant wallet.

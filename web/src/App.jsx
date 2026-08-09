@@ -456,7 +456,9 @@ function App() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand-mark"><LockKeyhole size={18} /></div>
+        <div className="brand-mark" aria-label="Veyra">
+          <img src="/veyra-mark.png" alt="" />
+        </div>
         <nav aria-label="Main navigation">
           {navigationItems.map((item) => {
             const icons = { home: LayoutDashboard, issuer: BadgeCheck, vault: Vault, network: Network };
@@ -488,8 +490,8 @@ function App() {
       <main>
         <header className="topbar">
           <div className="brand-copy">
-            <span className="brand-name">Private FXRP</span>
-            <span className="brand-section">Access Desk</span>
+            <span className="brand-name">Veyra</span>
+            <span className="brand-section">Private FXRP access</span>
           </div>
           <div className="topbar-actions">
             <span className="network-pill"><StatusDot tone="success" /> Coston2</span>
@@ -792,7 +794,7 @@ function LandingPage({ onOpenAccess, onOpenIssuer }) {
           <p className="eyebrow">Private access infrastructure for FXRP</p>
           <h1>Eligibility stays private. Access stays composable.</h1>
           <p className="landing-lede">
-            Private FXRP Access Desk lets issuers evaluate wallet eligibility inside
+            Veyra lets issuers evaluate wallet eligibility inside
             Flare Confidential Compute and issue a reusable access pass without
             publishing the underlying credential attributes.
           </p>
