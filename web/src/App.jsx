@@ -511,7 +511,11 @@ function App() {
 
         <div className="workspace">
           {view === "landing" && (
-            <LandingPage onOpenAccess={() => setView("access")} onOpenIssuer={() => setView("issuer")} />
+            <LandingPage
+              onOpenAccess={() => setView("access")}
+              onOpenIssuer={() => setView("issuer")}
+              onOpenNetwork={() => setView("network")}
+            />
           )}
           {view === "issuer" && (
             <IssuerWorkspace
@@ -786,58 +790,114 @@ function App() {
   );
 }
 
-function LandingPage({ onOpenAccess, onOpenIssuer }) {
+export function LandingPage({ onOpenAccess, onOpenIssuer, onOpenNetwork }) {
   return (
     <div className="landing-page">
       <section className="landing-hero">
         <div className="landing-copy">
-          <p className="eyebrow">Private access infrastructure for FXRP</p>
-          <h1>Eligibility stays private. Access stays composable.</h1>
+          <div className="landing-live-row">
+            <span><StatusDot tone="success" /> Live on Coston2</span>
+            <span>FCC extension #{config.liveProof.extensionId || "—"}</span>
+          </div>
+          <p className="eyebrow">Confidential eligibility for FXRP applications</p>
+          <h1 aria-label="Eligibility without exposure.">Eligibility without <em>exposure.</em></h1>
           <p className="landing-lede">
-            Veyra lets issuers evaluate wallet eligibility inside
-            Flare Confidential Compute and issue a reusable access pass without
-            publishing the underlying credential attributes.
+            Veyra turns private credentials into narrow, reusable access passes.
+            Applications can enforce policy and exposure limits without receiving
+            jurisdiction, investor category, or risk data.
           </p>
           <div className="landing-actions">
             <button className="button primary" onClick={onOpenAccess}>
-              <Fingerprint size={17} /> Request FXRP access
+              Request FXRP access <ChevronRight size={17} />
             </button>
             <button className="button secondary" onClick={onOpenIssuer}>
-              <BadgeCheck size={17} /> Open issuer workspace
+              Open issuer workspace
             </button>
           </div>
+          <div className="landing-trust-row" aria-label="Privacy properties">
+            <span><Check size={13} /> Browser-encrypted</span>
+            <span><Check size={13} /> Wallet-bound</span>
+            <span><Check size={13} /> Reusable onchain</span>
+          </div>
         </div>
-        <div className="landing-visual" aria-hidden="true">
-          <div className="landing-card dark"><LockKeyhole size={24} /><span>Private credential</span><b>Encrypted locally</b></div>
-          <div className="landing-bridge"><ChevronRight size={24} /></div>
-          <div className="landing-card green"><ShieldCheck size={24} /><span>Access decision</span><b>Verified onchain</b></div>
+        <div className="decision-demo" aria-label="Private eligibility decision example">
+          <div className="decision-topline">
+            <div><StatusDot tone="success" /><span>Confidential policy run</span></div>
+            <code>policy_01</code>
+          </div>
+          <div className="decision-body">
+            <div className="private-inputs">
+              <p>Encrypted credential</p>
+              <div><span>Jurisdiction</span><code>••••••••</code></div>
+              <div><span>Investor category</span><code>••••••</code></div>
+              <div><span>Risk score</span><code>••••</code></div>
+              <small><FileKey2 size={13} /> Plaintext never reaches the chain</small>
+            </div>
+            <div className="decision-rail">
+              <span>FCC</span>
+              <i />
+              <ChevronRight size={16} />
+            </div>
+            <div className="public-output">
+              <p>Access pass</p>
+              <strong><Check size={16} /> Approved</strong>
+              <dl>
+                <div><dt>Limit</dt><dd>$10,000</dd></div>
+                <div><dt>Policy</dt><dd>threshold</dd></div>
+                <div><dt>Private fields</dt><dd>0 exposed</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div className="decision-footer">
+            <span>Signed by registered TEE</span>
+            <b>PRODUCTION</b>
+          </div>
         </div>
       </section>
 
-      <section className="landing-grid" aria-label="Product overview">
-        <article className="landing-feature">
-          <Fingerprint size={20} />
-          <h2>Private evaluation</h2>
-          <p>Credential fields stay inside the encrypted FCC request and never become public chain data.</p>
-        </article>
-        <article className="landing-feature">
-          <ShieldCheck size={20} />
-          <h2>Narrow access pass</h2>
-          <p>Applications receive only the wallet, policy, limit, expiry, and nonce required for enforcement.</p>
-        </article>
-        <article className="landing-feature">
-          <Vault size={20} />
-          <h2>FXRP-ready</h2>
-          <p>The reference vault uses FTSOv2 XRP/USD pricing to enforce USD-denominated exposure limits.</p>
-        </article>
+      <section className="landing-section process-section" aria-labelledby="process-title">
+        <div className="landing-section-heading">
+          <div><p className="eyebrow">From credential to capability</p><h2 id="process-title">How Veyra works</h2></div>
+          <p>Private facts enter the confidential boundary. Only the minimum enforceable result comes out.</p>
+        </div>
+        <div className="process-grid">
+          <article><span className="step-number">01</span><FileKey2 size={21} /><h3>Encrypted in your browser</h3><p>The applicant encrypts an issuer-signed, wallet-bound credential directly to the FCC TEE key.</p></article>
+          <article><span className="step-number">02</span><Fingerprint size={21} /><h3>Evaluated inside FCC</h3><p>Veyra verifies the issuer and policy against private fields inside Flare Confidential Compute.</p></article>
+          <article><span className="step-number">03</span><BadgeCheck size={21} /><h3>Reusable onchain pass</h3><p>The chain stores only the approved wallet, policy, limit, expiry, and replay-safe nonce.</p></article>
+        </div>
       </section>
 
-      <section className="landing-proof">
-        <div>
-          <p className="panel-kicker">Live on Coston2</p>
-          <strong>FCC extension #{config.liveProof.extensionId || "—"} · TEE status PRODUCTION</strong>
+      <section className="landing-section products-section" aria-labelledby="products-title">
+        <div className="products-intro">
+          <p className="eyebrow">Composable by design</p>
+          <h2 id="products-title" aria-label="One private decision. Multiple FXRP products.">One private decision.<br />Multiple FXRP products.</h2>
+          <p>Every integration consumes the same narrow pass—not the credential behind it.</p>
         </div>
-        <span className="tag verified"><Check size={13} /> End-to-end proof available</span>
+        <div className="product-list">
+          <article><Vault size={20} /><div><h3>Yield access</h3><p>Gate vault deposits by eligibility and enforce USD-denominated exposure limits.</p></div><span>01</span></article>
+          <article><Network size={20} /><div><h3>Liquidity programs</h3><p>Apply policy once across pools, incentives, and liquidity campaigns.</p></div><span>02</span></article>
+          <article><BadgeCheck size={20} /><div><h3>Institutional limits</h3><p>Prove an approved limit without publishing the risk inputs used to calculate it.</p></div><span>03</span></article>
+        </div>
+      </section>
+
+      <section className="landing-proof" aria-labelledby="proof-title">
+        <div className="proof-copy">
+          <p className="eyebrow">Verifiable deployment</p>
+          <h2 id="proof-title">Live Coston2 proof</h2>
+          <p>A registered FCC signer completed the encrypted request and relayed the access decision onchain.</p>
+          <button className="button proof-button" onClick={onOpenNetwork}>Inspect deployment <ChevronRight size={16} /></button>
+        </div>
+        <div className="proof-metrics">
+          <div><span>FCC extension</span><strong>#{config.liveProof.extensionId || "—"}</strong></div>
+          <div><span>TEE status</span><strong className="proof-production"><StatusDot tone="success" /> PRODUCTION</strong></div>
+          <div><span>Evidence block</span><strong>{config.liveProof.evidenceBlock?.toLocaleString() || "—"}</strong></div>
+          <div><span>TEE signer</span><strong className="mono">{short(config.liveProof.teeSigner)}</strong></div>
+        </div>
+      </section>
+
+      <section className="landing-cta">
+        <div><p className="eyebrow">Private inputs. Public assurance.</p><h2>Make eligibility usable without making it visible.</h2></div>
+        <button className="button primary" onClick={onOpenAccess}>Request FXRP access <ChevronRight size={17} /></button>
       </section>
     </div>
   );
