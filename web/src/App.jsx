@@ -53,6 +53,7 @@ import {
   signCredentialPackage
 } from "./lib/policy";
 import { encryptAccessRequest, fetchTeeInfo } from "./lib/tee";
+import { navigationItems, viewForNavigation } from "./lib/navigation";
 
 const credentialTypes = {
   Credential: [
@@ -103,7 +104,7 @@ function StatusDot({ tone = "neutral" }) {
 }
 
 function App() {
-  const [view, setView] = useState("access");
+  const [view, setView] = useState("landing");
   const [account, setAccount] = useState(null);
   const [walletProvider, setWalletProvider] = useState(null);
   const [snapshot, setSnapshot] = useState(emptySnapshot);
@@ -457,10 +458,21 @@ function App() {
       <aside className="sidebar">
         <div className="brand-mark"><LockKeyhole size={18} /></div>
         <nav aria-label="Main navigation">
-          <button className={`nav-icon ${view === "access" ? "active" : ""}`} onClick={() => setView("access")} title="Access desk"><LayoutDashboard /></button>
-          <button className={`nav-icon ${view === "issuer" ? "active" : ""}`} onClick={() => setView("issuer")} title="Issuer workspace"><BadgeCheck /></button>
-          <button className="nav-icon" onClick={() => setView("access")} title="Vault"><Vault /></button>
-          <button className="nav-icon" title="Network"><Network /></button>
+          {navigationItems.map((item) => {
+            const icons = { home: LayoutDashboard, issuer: BadgeCheck, vault: Vault, network: Network };
+            const Icon = icons[item.id];
+            return (
+              <button
+                key={item.id}
+                className={`nav-icon ${view === item.view ? "active" : ""}`}
+                onClick={() => setView(viewForNavigation(item.id))}
+                title={item.label}
+                aria-label={item.label}
+              >
+                <Icon />
+              </button>
+            );
+          })}
         </nav>
         <a
           className="nav-icon"
@@ -496,6 +508,9 @@ function App() {
         </header>
 
         <div className="workspace">
+          {view === "landing" && (
+            <LandingPage onOpenAccess={() => setView("access")} onOpenIssuer={() => setView("issuer")} />
+          )}
           {view === "issuer" && (
             <IssuerWorkspace
               account={account}
@@ -508,7 +523,21 @@ function App() {
               addActivity={addActivity}
             />
           )}
-          <div className={view === "issuer" ? "view-hidden" : ""}>
+          {view === "vault" && (
+            <VaultWorkspace
+              account={account}
+              snapshot={snapshot}
+              vaultMode={vaultMode}
+              setVaultMode={setVaultMode}
+              amount={amount}
+              setAmount={setAmount}
+              submitVaultAction={submitVaultAction}
+              busy={busy}
+              onOpenAccess={() => setView("access")}
+            />
+          )}
+          {view === "network" && <NetworkWorkspace />}
+          <div className={view === "access" ? "" : "view-hidden"}>
           <section className="page-heading">
             <div>
               <p className="eyebrow">Confidential eligibility</p>
@@ -751,6 +780,121 @@ function App() {
           </div>
         </div>
       </main>
+    </div>
+  );
+}
+
+function LandingPage({ onOpenAccess, onOpenIssuer }) {
+  return (
+    <div className="landing-page">
+      <section className="landing-hero">
+        <div className="landing-copy">
+          <p className="eyebrow">Private access infrastructure for FXRP</p>
+          <h1>Eligibility stays private. Access stays composable.</h1>
+          <p className="landing-lede">
+            Private FXRP Access Desk lets issuers evaluate wallet eligibility inside
+            Flare Confidential Compute and issue a reusable access pass without
+            publishing the underlying credential attributes.
+          </p>
+          <div className="landing-actions">
+            <button className="button primary" onClick={onOpenAccess}>
+              <Fingerprint size={17} /> Request FXRP access
+            </button>
+            <button className="button secondary" onClick={onOpenIssuer}>
+              <BadgeCheck size={17} /> Open issuer workspace
+            </button>
+          </div>
+        </div>
+        <div className="landing-visual" aria-hidden="true">
+          <div className="landing-card dark"><LockKeyhole size={24} /><span>Private credential</span><b>Encrypted locally</b></div>
+          <div className="landing-bridge"><ChevronRight size={24} /></div>
+          <div className="landing-card green"><ShieldCheck size={24} /><span>Access decision</span><b>Verified onchain</b></div>
+        </div>
+      </section>
+
+      <section className="landing-grid" aria-label="Product overview">
+        <article className="landing-feature">
+          <Fingerprint size={20} />
+          <h2>Private evaluation</h2>
+          <p>Credential fields stay inside the encrypted FCC request and never become public chain data.</p>
+        </article>
+        <article className="landing-feature">
+          <ShieldCheck size={20} />
+          <h2>Narrow access pass</h2>
+          <p>Applications receive only the wallet, policy, limit, expiry, and nonce required for enforcement.</p>
+        </article>
+        <article className="landing-feature">
+          <Vault size={20} />
+          <h2>FXRP-ready</h2>
+          <p>The reference vault uses FTSOv2 XRP/USD pricing to enforce USD-denominated exposure limits.</p>
+        </article>
+      </section>
+
+      <section className="landing-proof">
+        <div>
+          <p className="panel-kicker">Live on Coston2</p>
+          <strong>FCC extension #{config.liveProof.extensionId || "—"} · TEE status PRODUCTION</strong>
+        </div>
+        <span className="tag verified"><Check size={13} /> End-to-end proof available</span>
+      </section>
+    </div>
+  );
+}
+
+function VaultWorkspace({
+  account,
+  snapshot,
+  vaultMode,
+  setVaultMode,
+  amount,
+  setAmount,
+  submitVaultAction,
+  busy,
+  onOpenAccess
+}) {
+  return (
+    <div className="section-page">
+      <section className="page-heading">
+        <div>
+          <p className="eyebrow">Reference integration</p>
+          <h1>FXRP vault</h1>
+          <p className="subtitle">Use a verified access pass to enforce a USD exposure limit on FXRP.</p>
+        </div>
+        <Vault size={22} />
+      </section>
+      <div className="section-grid">
+        <section className={`pass-card ${snapshot.activeAccess ? "active" : ""}`}>
+          <div className="pass-top"><span className="pass-label">FXRP access pass</span><StatusDot tone={snapshot.activeAccess ? "success" : "neutral"} /></div>
+          <div className="pass-state"><ShieldCheck size={27} /><div><strong>{snapshot.activeAccess ? "Active" : "Not issued"}</strong><span>{snapshot.activeAccess ? "Verified on Coston2" : "Request private access first"}</span></div></div>
+          <div className="pass-metrics"><div><span>USD limit</span><strong>{formatUsd(snapshot.pass?.limitUsd)}</strong></div><div><span>Expires</span><strong>{formatDate(snapshot.pass?.expiresAt)}</strong></div></div>
+          {!snapshot.activeAccess && <button className="button secondary full" onClick={onOpenAccess}>Open access desk</button>}
+        </section>
+        <section className="panel vault-panel">
+          <div className="panel-header"><div><p className="panel-kicker">Onchain position</p><h2>Manage FXRP</h2></div><Vault size={19} /></div>
+          <div className="vault-balance"><span>Current position</span><strong>{formatUnits(snapshot.position, snapshot.decimals)} <small>FXRP</small></strong><p>Wallet: {formatUnits(snapshot.balance, snapshot.decimals)} FXRP</p></div>
+          <div className="segmented"><button className={vaultMode === "deposit" ? "active" : ""} onClick={() => setVaultMode("deposit")}><ArrowDownToLine size={15} /> Deposit</button><button className={vaultMode === "withdraw" ? "active" : ""} onClick={() => setVaultMode("withdraw")}><ArrowUpFromLine size={15} /> Withdraw</button></div>
+          <label className="amount-field"><span>Amount</span><div><input value={amount} onChange={(event) => setAmount(event.target.value)} inputMode="decimal" placeholder="0.00" /><b>FXRP</b></div></label>
+          <button className="button secondary full" onClick={submitVaultAction} disabled={!account || !amount || busy === "vault" || (vaultMode === "deposit" && !snapshot.activeAccess)}>{busy === "vault" && <LoaderCircle className="spin" size={16} />}{vaultMode === "deposit" ? "Deposit FXRP" : "Withdraw FXRP"}</button>
+          {!account && <p className="action-hint">Connect a Coston2 wallet to manage the vault.</p>}
+        </section>
+      </div>
+    </div>
+  );
+}
+
+function NetworkWorkspace() {
+  return (
+    <div className="section-page">
+      <section className="page-heading">
+        <div><p className="eyebrow">Deployment status</p><h1>Network</h1><p className="subtitle">Public verification details for the live Coston2 deployment.</p></div>
+        <Network size={22} />
+      </section>
+      <section className="panel network-status-panel">
+        <div className="network-status-heading"><div><p className="panel-kicker">Flare Confidential Compute</p><h2>Coston2 testnet</h2></div><span className="tag verified"><Check size={13} /> PRODUCTION</span></div>
+        <div className="detail-grid"><Detail label="Chain ID" value={String(config.chainId)} mono /><Detail label="FCC extension" value={`#${config.liveProof.extensionId || "—"}`} /><Detail label="TEE signer" value={short(config.liveProof.teeSigner)} mono /><Detail label="Evidence block" value={config.liveProof.evidenceBlock?.toLocaleString() || "—"} mono /></div>
+        <p className="proof-privacy">The simulated TEE is the hackathon-supported Coston2 configuration. Public evidence contains the signed decision, not private credential fields.</p>
+        <div className="proof-links network-links"><a href={`${config.explorerUrl}/tx/${config.liveProof.requestTransaction}`} target="_blank" rel="noreferrer">Request transaction <ExternalLink size={13} /></a><a href={`${config.explorerUrl}/tx/${config.liveProof.relayTransaction}`} target="_blank" rel="noreferrer">Relay transaction <ExternalLink size={13} /></a></div>
+      </section>
     </div>
   );
 }
