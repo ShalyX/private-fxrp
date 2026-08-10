@@ -80,7 +80,7 @@ for index in "${!section_files[@]}"; do
   mix_labels+="[s$index]"
 done
 
-mix_filter+="$mix_labels amix=inputs=${#section_files[@]}:normalize=0,highpass=f=45,lowpass=f=4800,afade=t=out:st=87:d=3,loudnorm=I=-25:TP=-5:LRA=8,alimiter=limit=0.56:attack=5:release=100:level=false,aresample=48000,apad=pad_dur=1,atrim=end=90[score]"
+mix_filter+="$mix_labels amix=inputs=${#section_files[@]}:normalize=0,highpass=f=45,lowpass=f=4800,afade=t=out:st=87:d=3,loudnorm=I=-20:TP=-3:LRA=8,alimiter=limit=0.70:attack=5:release=100:level=false,aresample=48000,apad=pad_dur=1,atrim=end=90[score]"
 
 ffmpeg -hide_banner -loglevel error -y \
   "${mix_inputs[@]}" \

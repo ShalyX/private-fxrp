@@ -80,7 +80,7 @@ ffmpeg -hide_banner -loglevel error -y \
 
 ffmpeg -hide_banner -loglevel error -y \
   -i "$SCORE" -i "$VOICE_TRACK" \
-  -filter_complex "[1:a]pan=stereo|c0=c0|c1=c0,asplit=2[voice_sc][voice_mix];[0:a][voice_sc]sidechaincompress=threshold=0.020:ratio=7:attack=18:release=260[ducked];[ducked]volume=0.92[score];[score][voice_mix]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=7,alimiter=limit=0.84:attack=5:release=80:level=false,volume=-0.8dB,atrim=0:90,aresample=48000[mix]" \
+  -filter_complex "[1:a]pan=stereo|c0=c0|c1=c0,asplit=2[voice_sc][voice_mix];[0:a][voice_sc]sidechaincompress=threshold=0.035:ratio=3:attack=25:release=320[ducked];[ducked]volume=1.15[score];[score][voice_mix]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=7,alimiter=limit=0.84:attack=5:release=80:level=false,volume=-0.8dB,atrim=0:90,aresample=48000[mix]" \
   -map "[mix]" -t 90 -ar 48000 -ac 2 -c:a pcm_s16le "$FINAL_MIX"
 
 ffmpeg -hide_banner -loglevel error -y \
