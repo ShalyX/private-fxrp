@@ -1,0 +1,54 @@
+1
+00:00:00,400 --> 00:00:06,000
+Protocols often need to know whether a wallet meets
+jurisdiction, risk, or investor requirements.
+
+2
+00:00:06,200 --> 00:00:14,000
+They should not need the underlying credential.
+Veyra separates private eligibility from public enforcement.
+
+3
+00:00:14,200 --> 00:00:24,000
+An authorized issuer signs a wallet-bound credential containing
+the applicant's jurisdiction, category, risk score, and expiry.
+
+4
+00:00:24,200 --> 00:00:32,000
+In the browser, Veyra retrieves the registered TEE public key and
+encrypts the full request before it leaves the device.
+
+5
+00:00:32,200 --> 00:00:44,000
+Flare Confidential Compute decrypts it inside the confidential boundary,
+verifies the issuer and committed policy, and evaluates the private fields.
+
+6
+00:00:44,200 --> 00:00:52,000
+Only a narrow result leaves: account, policy, eligibility,
+approved limit, expiry, and nonce.
+
+7
+00:00:52,200 --> 00:01:01,000
+AccessRegistry verifies the registered signer, policy commitment,
+issuer, expiry, and replay state before recording the pass.
+
+8
+00:01:01,200 --> 00:01:16,000
+A recorded Coston2 run issued the access pass through FCC,
+with the TEE registered as production.
+
+9
+00:01:16,200 --> 00:01:21,300
+The reference FXRP vault requires that pass before accepting deposits
+and enforces the approved dollar exposure limit with FTSOv2 pricing.
+
+10
+00:01:21,300 --> 00:01:24,000
+Applications consume the authorization,
+not the private credential.
+
+11
+00:01:24,100 --> 00:01:30,000
+Veyra. Prove eligibility. Not identity.
+Try it at veyra-fxrp.web.app.

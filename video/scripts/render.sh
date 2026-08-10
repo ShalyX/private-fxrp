@@ -16,36 +16,45 @@ command -v ffmpeg >/dev/null || { echo "FFMPEG_REQUIRED" >&2; exit 1; }
 command -v ffprobe >/dev/null || { echo "FFPROBE_REQUIRED" >&2; exit 1; }
 
 mkdir -p "$CLIP_DIR" "$DIST_DIR"
+find "$CLIP_DIR" -maxdepth 1 -type f -name '*.mp4' -delete
 bash "$SCRIPT_DIR/build-frames.sh"
 
 render_clip() {
   local name="$1"
   local duration="$2"
   local frames=$((duration * 30))
+  local output="$CLIP_DIR/$name.mp4"
+  local staged
+  staged="$(mktemp --suffix=.mp4 "$CLIP_DIR/.${name}.XXXXXX")"
 
   ffmpeg -hide_banner -loglevel error -y \
     -loop 1 -i "$FRAME_DIR/$name.png" \
     -vf "scale=1984:1116,zoompan=z='min(zoom+0.00006,1.02)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=$frames:s=1920x1080:fps=30,format=yuv420p" \
     -frames:v "$frames" -an \
-    -c:v libx264 -preset medium -crf 18 \
-    "$CLIP_DIR/$name.mp4"
+    -c:v libx264 -preset veryfast -crf 18 -movflags +faststart \
+    "$staged"
+
+  ffprobe -v error -show_entries format=duration -of csv=p=0 "$staged" >/dev/null
+  mv -f "$staged" "$output"
 }
 
 render_clip problem 6
 render_clip landing 8
-render_clip issuer 7
-render_clip encryption 7
-render_clip fcc 10
-render_clip decision 6
-render_clip access 8
-render_clip recorded-proof 7
-render_clip network 12
-render_clip vault 7
-render_clip consumer 5
-render_clip cta 7
+render_clip issuer 10
+render_clip encryption 8
+render_clip fcc 12
+render_clip decision 8
+render_clip access 9
+render_clip recorded-proof 8
+render_clip network-coston 2
+render_clip network-extension 2
+render_clip network-production 3
+render_clip vault 4
+render_clip consumer 4
+render_clip cta 6
 
 : > "$CONCAT_FILE"
-for name in problem landing issuer encryption fcc decision access recorded-proof network vault consumer cta; do
+for name in problem landing issuer encryption fcc decision access recorded-proof network-coston network-extension network-production vault consumer cta; do
   printf "file '%s'\n" "$CLIP_DIR/$name.mp4" >> "$CONCAT_FILE"
 done
 

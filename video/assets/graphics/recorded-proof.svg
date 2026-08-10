@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <rect width="1920" height="1080" fill="#111820"/>
-  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#f16a8f">RECORDED COSTON2 RUN</text>
-  <text x="120" y="185" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#ffffff">Private access pass issued</text>
-  <rect x="120" y="265" width="1680" height="490" rx="26" fill="#18232d" stroke="#34404a" stroke-width="3"/>
-  <text x="180" y="340" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#8d9aa5">RECORDED 2026-08-05</text>
-  <text x="180" y="425" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">FCC extension</text>
-  <text x="540" y="425" font-family="Courier New, monospace" font-size="30" font-weight="700" fill="#ffffff">65835</text>
-  <text x="180" y="495" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">TEE signer</text>
-  <text x="540" y="495" font-family="Courier New, monospace" font-size="27" font-weight="700" fill="#ffffff">0x7820af00...e555108</text>
-  <text x="180" y="565" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Evidence block</text>
-  <text x="540" y="565" font-family="Courier New, monospace" font-size="30" font-weight="700" fill="#ffffff">33,637,745</text>
-  <text x="980" y="425" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Request transaction</text>
-  <text x="980" y="470" font-family="Courier New, monospace" font-size="25" fill="#ffffff">0x1864c02e...002ffa</text>
-  <text x="980" y="550" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Relay transaction</text>
-  <text x="980" y="595" font-family="Courier New, monospace" font-size="25" fill="#ffffff">0xdfa4c938...e8c71</text>
-  <rect x="980" y="640" width="510" height="65" rx="32" fill="#e8f6f1"/>
-  <text x="1235" y="682" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#087d62">PRIVATE_ACCESS_PASS_ISSUED</text>
+  <rect width="1920" height="126" fill="#e62058"/>
+  <text x="120" y="82" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">RECORDED COSTON2 RUN · 2026-08-05</text>
+  <text x="120" y="230" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#ffffff">Private access pass issued</text>
+  <rect x="120" y="300" width="1680" height="455" rx="26" fill="#18232d" stroke="#34404a" stroke-width="3"/>
+  <text x="180" y="390" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">FCC extension</text>
+  <text x="540" y="390" font-family="Courier New, monospace" font-size="30" font-weight="700" fill="#ffffff">65835</text>
+  <text x="180" y="470" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">TEE signer</text>
+  <text x="540" y="470" font-family="Courier New, monospace" font-size="27" font-weight="700" fill="#ffffff">0x7820af00...e555108</text>
+  <text x="180" y="550" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Evidence block</text>
+  <text x="540" y="550" font-family="Courier New, monospace" font-size="30" font-weight="700" fill="#ffffff">33,637,745</text>
+  <text x="980" y="390" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Request transaction</text>
+  <text x="980" y="435" font-family="Courier New, monospace" font-size="25" fill="#ffffff">0x1864c02e...002ffa</text>
+  <text x="980" y="515" font-family="Arial, sans-serif" font-size="25" fill="#8d9aa5">Relay transaction</text>
+  <text x="980" y="560" font-family="Courier New, monospace" font-size="25" fill="#ffffff">0xdfa4c938...e8c71</text>
+  <rect x="980" y="625" width="510" height="65" rx="32" fill="#e8f6f1"/>
+  <text x="1235" y="667" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#087d62">PRIVATE_ACCESS_PASS_ISSUED</text>
   <rect y="850" width="1920" height="230" fill="#f2f5f7"/>
   <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#18202a">The evidence file records the signed result, not credential plaintext.</text>
   <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#697582">Credential attributes, plaintext request, and ciphertext were not retained.</text>

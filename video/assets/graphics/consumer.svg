@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <rect width="1920" height="1080" fill="#f2f5f7"/>
-  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">REFERENCE CONSUMER</text>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">REFERENCE CONSUMER · IMPLEMENTED ENFORCEMENT</text>
   <text x="120" y="180" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#18202a">Apps enforce the result, not the credential.</text>
+  <text x="120" y="235" font-family="Courier New, monospace" font-size="25" font-weight="700" fill="#087d62">canAccess() → active pass + policy → limit enforcement</text>
   <rect x="120" y="280" width="560" height="430" rx="24" fill="#111820"/>
-  <text x="175" y="350" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#9eabb6">ACCESSREGISTRY PASS</text>
+  <text x="175" y="350" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#9eabb6">ACTIVE PASS + POLICY</text>
   <text x="175" y="435" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#ffffff">Active for wallet + policy</text>
   <text x="175" y="515" font-family="Arial, sans-serif" font-size="25" fill="#9eabb6">limitUsd</text>
   <text x="470" y="515" text-anchor="end" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#55d6b0">approved</text>

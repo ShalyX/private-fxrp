@@ -51,7 +51,7 @@ make_ui_frame() {
     -pointsize 22 -fill '#f16a8f' -gravity southwest \
     -annotate +130+165 "$label" \
     "$caption_image" -gravity south -geometry +0+18 -composite \
-    "$FRAME_DIR/$output.png"
+    -depth 8 "PNG24:$FRAME_DIR/$output.png"
 }
 
 make_ui_frame \
@@ -70,14 +70,24 @@ make_ui_frame \
   'AccessRegistry verifies the signer, policy, expiry, and replay state before recording the pass.'
 
 make_ui_frame \
-  'network-production.jpg' 'network' '1363x660+0+100' \
-  'RECORDED DEPLOYMENT EVIDENCE' \
-  'FCC extension 65835 reached PRODUCTION in the recorded Coston2 registration evidence.'
+  'network-production.jpg' 'network-coston' '760x360+90+180' \
+  'RECORDED REGISTRATION · COSTON2 TESTNET' \
+  'The recorded deployment evidence identifies the Coston2 testnet environment.'
+
+make_ui_frame \
+  'network-production.jpg' 'network-extension' '650x340+560+180' \
+  'RECORDED REGISTRATION · FCC EXTENSION 65835' \
+  'The real deployment UI records FCC extension 65835 and evidence block 33,637,745.'
+
+make_ui_frame \
+  'network-production.jpg' 'network-production' '500x300+820+160' \
+  'RECORDED REGISTRATION · PRODUCTION' \
+  'The registered TEE reached PRODUCTION in the recorded Coston2 evidence.'
 
 make_ui_frame \
   'fxrp-vault.jpg' 'vault' '1363x720+0+0' \
-  'REFERENCE INTEGRATION' \
-  'The FXRP vault requires an active access pass before deposits can proceed.'
+  'REFERENCE CONSUMER · CURRENT PASS EXPIRED' \
+  'Without an active pass, the vault keeps the deposit action unavailable.'
 
 rm -f "$FRAME_DIR"/.staged-*.png "$FRAME_DIR"/.caption-*.png
 

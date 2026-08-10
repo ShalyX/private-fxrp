@@ -20,8 +20,8 @@ expiry, and nonce.
 AccessRegistry verifies the registered signer, policy commitment, issuer,
 expiry, and replay state before recording the pass.
 
-A recorded Coston2 run issued a pass through FCC extension sixty-five thousand,
-eight hundred thirty-five, with the TEE registered as production.
+A recorded Coston2 run issued the access pass through FCC, with the TEE
+registered as production.
 
 The reference FXRP vault requires that pass before accepting deposits and
 enforces the approved dollar exposure limit with FTSOv2 pricing.
