@@ -10,7 +10,7 @@ WORK_DIR="$VIDEO_DIR/build/elevenlabs"
 SEGMENT_DIR="$WORK_DIR/segments"
 VOICE_SOURCE="$WORK_DIR/voice-source.wav"
 VOICE_TRACK="$WORK_DIR/voice-track.wav"
-BED="$WORK_DIR/bed.wav"
+SCORE="$VIDEO_DIR/build/score/veyra-score.wav"
 FINAL_MIX="$WORK_DIR/final-mix.wav"
 OUTPUT="$VIDEO_DIR/dist/veyra-90s-demo-elevenlabs-master.mp4"
 STAGED_OUTPUT="$(mktemp --suffix=.mp4 "$VIDEO_DIR/dist/.veyra-elevenlabs.XXXXXX")"
@@ -21,6 +21,7 @@ command -v ffprobe >/dev/null || { echo "FFPROBE_REQUIRED" >&2; exit 1; }
 
 mkdir -p "$SEGMENT_DIR" "$VIDEO_DIR/dist"
 bash "$SCRIPT_DIR/render.sh"
+bash "$SCRIPT_DIR/build-score.sh"
 
 ffmpeg -hide_banner -loglevel error -y \
   -i "$VOICE" \
@@ -78,12 +79,9 @@ ffmpeg -hide_banner -loglevel error -y \
   -map "[voice]" -t 90 -ar 48000 -ac 1 -c:a pcm_s16le "$VOICE_TRACK"
 
 ffmpeg -hide_banner -loglevel error -y \
-  -i "$VISUAL" -vn -ar 48000 -ac 1 -c:a pcm_s16le "$BED"
-
-ffmpeg -hide_banner -loglevel error -y \
-  -i "$BED" -i "$VOICE_TRACK" \
-  -filter_complex "[0:a][1:a]sidechaincompress=threshold=0.020:ratio=7:attack=18:release=260[ducked];[ducked]volume=0.82[bed];[bed][1:a]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=7,alimiter=limit=0.84:attack=5:release=80:level=false,volume=-0.8dB,atrim=0:90,aresample=48000[mix]" \
-  -map "[mix]" -t 90 -ar 48000 -ac 1 -c:a pcm_s16le "$FINAL_MIX"
+  -i "$SCORE" -i "$VOICE_TRACK" \
+  -filter_complex "[1:a]pan=stereo|c0=c0|c1=c0,asplit=2[voice_sc][voice_mix];[0:a][voice_sc]sidechaincompress=threshold=0.020:ratio=7:attack=18:release=260[ducked];[ducked]volume=0.92[score];[score][voice_mix]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=7,alimiter=limit=0.84:attack=5:release=80:level=false,volume=-0.8dB,atrim=0:90,aresample=48000[mix]" \
+  -map "[mix]" -t 90 -ar 48000 -ac 2 -c:a pcm_s16le "$FINAL_MIX"
 
 ffmpeg -hide_banner -loglevel error -y \
   -i "$VISUAL" -i "$FINAL_MIX" -i "$CAPTIONS" \

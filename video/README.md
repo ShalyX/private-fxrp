@@ -57,6 +57,10 @@ where the locked edit requires it, ducks the instrumental bed under narration,
 and outputs `video/dist/veyra-90s-demo-elevenlabs-master.mp4` with English
 subtitles.
 
+The original score is generated reproducibly by `scripts/build-score.sh`. It
+uses warm harmonic pads and measured pulses, drops back during recorded proof,
+restores motion for the consumer sequence, and resolves into the Veyra end card.
+
 ## Truth boundary
 
 Read `PRODUCT_TRUTH_SHEET.md` before changing any caption or claim. The current
