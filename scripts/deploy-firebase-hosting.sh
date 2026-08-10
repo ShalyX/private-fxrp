@@ -12,6 +12,6 @@ command -v firebase >/dev/null || {
 firebase deploy --only hosting:app --project="$PROJECT_ID"
 
 curl --fail --silent --show-error "$SITE_URL/health" | grep -q '"status":"ok"'
-curl --fail --silent --show-error "$SITE_URL/" | grep -q 'Veyra'
+curl --fail --silent --show-error "$SITE_URL/" | grep -q 'id="root"'
 
 echo "VEYRA_FIREBASE_HOSTING_LIVE url=$SITE_URL"
