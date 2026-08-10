@@ -38,10 +38,9 @@ bash video/scripts/render-master.sh
 ```
 
 This produces `video/dist/veyra-90s-demo-submission-master.mp4` with the locked
-visual edit, timed `slt` scratch narration, cue-based sound mix, and a selectable
-English subtitle track from `CAPTIONS.srt`. The synthetic narration is suitable
-for timing and review; replace it with a recorded human read for the final public
-upload when one is available.
+visual edit, restrained instrumental bed, and burned-in explanatory captions.
+The submission master contains no synthetic narration. `CAPTIONS.srt` remains
+available as a sidecar subtitle file for upload platforms.
 
 ## Truth boundary
 
