@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">REFERENCE CONSUMER</text>
+  <text x="120" y="180" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#18202a">Apps enforce the result, not the credential.</text>
+  <rect x="120" y="280" width="560" height="430" rx="24" fill="#111820"/>
+  <text x="175" y="350" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#9eabb6">ACCESSREGISTRY PASS</text>
+  <text x="175" y="435" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#ffffff">Active for wallet + policy</text>
+  <text x="175" y="515" font-family="Arial, sans-serif" font-size="25" fill="#9eabb6">limitUsd</text>
+  <text x="470" y="515" text-anchor="end" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#55d6b0">approved</text>
+  <text x="175" y="585" font-family="Arial, sans-serif" font-size="25" fill="#9eabb6">expiresAt</text>
+  <text x="470" y="585" text-anchor="end" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff">future</text>
+  <text x="175" y="655" font-family="Arial, sans-serif" font-size="25" fill="#9eabb6">nonce</text>
+  <text x="470" y="655" text-anchor="end" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff">increasing</text>
+  <path d="M735 495 H1015" stroke="#087d62" stroke-width="6"/>
+  <path d="M995 468 L1025 495 L995 522" fill="none" stroke="#087d62" stroke-width="6"/>
+  <text x="875" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#087d62">canAccess()</text>
+  <rect x="1070" y="280" width="730" height="430" rx="24" fill="#ffffff" stroke="#dce2e7" stroke-width="3"/>
+  <text x="1125" y="350" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#e62058">PRIVATE FXRP VAULT</text>
+  <text x="1125" y="435" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#18202a">1. Require active access pass</text>
+  <text x="1125" y="505" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#18202a">2. Read FTSOv2 XRP/USD price</text>
+  <text x="1125" y="575" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#18202a">3. Calculate next exposure</text>
+  <text x="1125" y="645" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#18202a">4. Reject exposure above limit</text>
+  <rect y="850" width="1920" height="230" fill="#111820"/>
+  <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">The vault consumes the narrow pass and enforces its USD limit.</text>
+  <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#b5c0ca">It never needs jurisdiction, investor category, or risk score.</text>
+</svg>

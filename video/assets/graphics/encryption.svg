@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">THE PRIVACY BOUNDARY</text>
+  <text x="120" y="175" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#18202a">Encrypted in the browser</text>
+  <rect x="120" y="265" width="520" height="445" rx="22" fill="#ffffff" stroke="#dce2e7" stroke-width="3"/>
+  <text x="170" y="330" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#697582">ISSUER-SIGNED CREDENTIAL</text>
+  <text x="170" y="410" font-family="Arial, sans-serif" font-size="28" fill="#18202a">Wallet bound</text>
+  <text x="170" y="480" font-family="Arial, sans-serif" font-size="28" fill="#18202a">Jurisdiction</text>
+  <text x="170" y="550" font-family="Arial, sans-serif" font-size="28" fill="#18202a">Investor category</text>
+  <text x="170" y="620" font-family="Arial, sans-serif" font-size="28" fill="#18202a">Risk score</text>
+  <path d="M700 475 H940" stroke="#e62058" stroke-width="5"/>
+  <path d="M920 450 L950 475 L920 500" fill="none" stroke="#e62058" stroke-width="5"/>
+  <rect x="700" y="380" width="240" height="65" rx="32" fill="#fff0f4" stroke="#efb2c3"/>
+  <text x="820" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#bd1645">BROWSER</text>
+  <rect x="1000" y="265" width="800" height="445" rx="22" fill="#111820"/>
+  <text x="1055" y="330" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#55d6b0">ECIES CIPHERTEXT</text>
+  <text x="1055" y="415" font-family="Courier New, monospace" font-size="25" fill="#f16a8f">0x04a91f...e7c2</text>
+  <text x="1055" y="475" font-family="Courier New, monospace" font-size="25" fill="#8f9aa6">5d8724a4...b110</text>
+  <text x="1055" y="535" font-family="Courier New, monospace" font-size="25" fill="#8f9aa6">91fe3c60...808d</text>
+  <text x="1055" y="595" font-family="Courier New, monospace" font-size="25" fill="#8f9aa6">c40a79e2...11fa</text>
+  <text x="1055" y="665" font-family="Arial, sans-serif" font-size="22" fill="#b5c0ca">Encrypted to the registered TEE public key</text>
+  <rect y="850" width="1920" height="230" fill="#111820"/>
+  <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">The complete request is encrypted before it leaves the device.</text>
+  <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#b5c0ca">Plaintext credential fields are not submitted onchain.</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">CONFIDENTIAL POLICY EVALUATION</text>
+  <text x="120" y="175" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#18202a">Flare Confidential Compute</text>
+  <rect x="120" y="315" width="360" height="260" rx="20" fill="#ffffff" stroke="#dce2e7" stroke-width="3"/>
+  <text x="300" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#697582">BROWSER</text>
+  <text x="300" y="465" text-anchor="middle" font-family="Courier New, monospace" font-size="25" fill="#bd1645">ciphertext</text>
+  <text x="300" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#697582">No plaintext onchain</text>
+  <path d="M505 445 H670" stroke="#e62058" stroke-width="5"/>
+  <path d="M650 420 L680 445 L650 470" fill="none" stroke="#e62058" stroke-width="5"/>
+  <rect x="700" y="245" width="680" height="500" rx="28" fill="#111820" stroke="#3b4853" stroke-width="3"/>
+  <text x="1040" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#55d6b0">FCC BOUNDARY</text>
+  <text x="770" y="400" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#ffffff">1. Decrypt inside the node</text>
+  <text x="770" y="470" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#ffffff">2. Recover the credential issuer</text>
+  <text x="770" y="540" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#ffffff">3. Match the committed policy</text>
+  <text x="770" y="610" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#ffffff">4. Evaluate private fields</text>
+  <text x="770" y="680" font-family="Arial, sans-serif" font-size="25" fill="#b5c0ca">jurisdiction + category + risk + expiry</text>
+  <path d="M1405 445 H1550" stroke="#087d62" stroke-width="5"/>
+  <path d="M1530 420 L1560 445 L1530 470" fill="none" stroke="#087d62" stroke-width="5"/>
+  <rect x="1580" y="315" width="220" height="260" rx="20" fill="#e8f6f1" stroke="#9fd5c6" stroke-width="3"/>
+  <text x="1690" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#087d62">DECISION</text>
+  <text x="1690" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18202a">Approved</text>
+  <text x="1690" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#697582">Narrow output</text>
+  <rect y="850" width="1920" height="230" fill="#111820"/>
+  <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">FCC verifies the issuer and policy, then evaluates private fields.</text>
+  <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#b5c0ca">The confidential boundary returns only an enforceable decision.</text>
+</svg>

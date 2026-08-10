@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#087d62">MINIMAL AUTHORIZATION</text>
+  <text x="120" y="190" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#18202a">Only the decision leaves FCC.</text>
+  <rect x="120" y="275" width="1680" height="430" rx="26" fill="#ffffff" stroke="#dce2e7" stroke-width="3"/>
+  <g font-family="Arial, sans-serif" font-size="25" font-weight="700">
+    <rect x="180" y="345" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="315" y="400" text-anchor="middle" fill="#087d62">account</text>
+    <rect x="480" y="345" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="615" y="400" text-anchor="middle" fill="#087d62">policy</text>
+    <rect x="780" y="345" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="915" y="400" text-anchor="middle" fill="#087d62">eligible</text>
+    <rect x="1080" y="345" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="1215" y="400" text-anchor="middle" fill="#087d62">limitUsd</text>
+    <rect x="1380" y="345" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="1515" y="400" text-anchor="middle" fill="#087d62">expiresAt</text>
+    <rect x="630" y="485" width="270" height="90" rx="16" fill="#e8f6f1"/><text x="765" y="540" text-anchor="middle" fill="#087d62">nonce</text>
+    <rect x="930" y="485" width="360" height="90" rx="16" fill="#111820"/><text x="1110" y="540" text-anchor="middle" fill="#ffffff">TEE signature</text>
+  </g>
+  <text x="960" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#697582">No jurisdiction. No investor category. No risk score.</text>
+  <rect y="850" width="1920" height="230" fill="#111820"/>
+  <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Enough to authorize access without exposing the credential.</text>
+  <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#b5c0ca">Wallet bound, policy bound, expiring, and replay protected.</text>
+</svg>

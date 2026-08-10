@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e62058">PRIVATE ELIGIBILITY</text>
+  <text x="120" y="205" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#18202a">Should private facts become public</text>
+  <text x="120" y="290" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#18202a">just to prove access?</text>
+  <rect x="120" y="375" width="760" height="390" rx="22" fill="#ffffff" stroke="#dce2e7" stroke-width="3"/>
+  <text x="170" y="435" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#697582">ISSUER CREDENTIAL</text>
+  <line x1="170" y1="470" x2="830" y2="470" stroke="#dce2e7" stroke-width="2"/>
+  <text x="170" y="530" font-family="Arial, sans-serif" font-size="27" fill="#697582">Jurisdiction</text>
+  <text x="770" y="530" text-anchor="end" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18202a">NG</text>
+  <text x="170" y="600" font-family="Arial, sans-serif" font-size="27" fill="#697582">Investor category</text>
+  <text x="770" y="600" text-anchor="end" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18202a">Qualified</text>
+  <text x="170" y="670" font-family="Arial, sans-serif" font-size="27" fill="#697582">Risk score</text>
+  <text x="770" y="670" text-anchor="end" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18202a">20 / 100</text>
+  <rect x="1025" y="375" width="775" height="390" rx="22" fill="#111820"/>
+  <text x="1080" y="435" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f16a8f">PUBLIC CHAIN</text>
+  <text x="1080" y="530" font-family="Arial, sans-serif" font-size="31" fill="#ffffff">The application needs a decision.</text>
+  <text x="1080" y="585" font-family="Arial, sans-serif" font-size="31" fill="#ffffff">It does not need these private fields.</text>
+  <rect x="1080" y="650" width="520" height="18" rx="9" fill="#e62058" opacity="0.90"/>
+  <rect x="1080" y="690" width="365" height="18" rx="9" fill="#e62058" opacity="0.55"/>
+  <rect y="850" width="1920" height="230" fill="#111820"/>
+  <text x="120" y="945" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Protocols need eligibility, risk, and limit checks.</text>
+  <text x="120" y="1000" font-family="Arial, sans-serif" font-size="32" fill="#b5c0ca">They should not need the underlying credential.</text>
+</svg>

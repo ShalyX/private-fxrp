@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#f2f5f7"/>
+  <rect x="120" y="105" width="1680" height="760" rx="32" fill="#ffffff" stroke="#f0bac9" stroke-width="3"/>
+  <text x="290" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#18202a">VEYRA</text>
+  <text x="170" y="430" font-family="Arial, sans-serif" font-size="88" font-weight="700" fill="#18202a">Prove eligibility.</text>
+  <text x="170" y="535" font-family="Georgia, serif" font-size="92" font-style="italic" fill="#e62058">Not identity.</text>
+  <text x="170" y="645" font-family="Arial, sans-serif" font-size="31" fill="#697582">Built with Flare Confidential Compute on Coston2</text>
+  <rect x="170" y="705" width="820" height="88" rx="44" fill="#111820"/>
+  <text x="580" y="761" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">veyra-fxrp.web.app</text>
+  <text x="170" y="960" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#e62058">TRY THE LIVE WEB APP</text>
+</svg>
