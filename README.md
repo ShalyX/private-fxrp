@@ -5,7 +5,7 @@ Private FXRP access infrastructure.
 Confidential policy evaluation and reusable wallet access decisions for FXRP
 products on Flare.
 
-**Live Coston2 app:** https://private-fxrp-access-desk-351242117184.us-west1.run.app/
+**Live Coston2 app:** https://veyra-fxrp.web.app/
 
 Veyra lets an institution prove that a wallet satisfies an
 access policy without publishing the underlying jurisdiction, investor

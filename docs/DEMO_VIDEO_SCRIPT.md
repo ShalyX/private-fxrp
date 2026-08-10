@@ -4,7 +4,7 @@
 
 - Screen-only capture, 16:9, 1080p if available.
 - Keep the browser at 100% zoom.
-- Use the live app: `https://private-fxrp-access-desk-351242117184.us-west1.run.app/`
+- Use the live app: `https://veyra-fxrp.web.app/`
 - Hide browser bookmarks and personal notifications.
 - Use Coston2 testnet only; do not show private keys or credential plaintext.
 
@@ -81,7 +81,7 @@ Veyra — Private FXRP access infrastructure
 Confidential eligibility for FXRP applications
 
 Coston2 • Flare Confidential Compute • FTSOv2
-private-fxrp-access-desk-351242117184.us-west1.run.app
+veyra-fxrp.web.app
 ```
 
 ## Capture checklist

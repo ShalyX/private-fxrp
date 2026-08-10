@@ -48,7 +48,7 @@ simulated TEE, not an audited mainnet product.
 
 ## Backup proof
 
-- Live app: https://private-fxrp-access-desk-351242117184.us-west1.run.app/
+- Live app: https://veyra-fxrp.web.app/
 - Request transaction:
   `0x0c9d0b18ee4f62440e89b795c24bf57b374018d12268cad3ab63aabbe5625f77`
 - Relay transaction:

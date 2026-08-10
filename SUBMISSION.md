@@ -48,7 +48,7 @@ and applications receive deterministic onchain enforcement.
 
 ## Live deployment
 
-- App: https://private-fxrp-access-desk-351242117184.us-west1.run.app/
+- App: https://veyra-fxrp.web.app/
 - Network: Coston2, chain ID `114`
 - FCC extension: `65835`
 - TEE status: `PRODUCTION`
