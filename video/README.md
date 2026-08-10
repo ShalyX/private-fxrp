@@ -42,6 +42,21 @@ visual edit, restrained instrumental bed, and burned-in explanatory captions.
 The submission master contains no synthetic narration. `CAPTIONS.srt` remains
 available as a sidecar subtitle file for upload platforms.
 
+## ElevenLabs narrated master
+
+The approved Ryan narration is stored at
+`assets/audio/veyra-narration-ryan.mp3`. Build the shot-synchronized narrated
+master with:
+
+```bash
+bash video/scripts/render-elevenlabs-master.sh
+```
+
+The script trims paragraph pauses, uses pitch-preserving time compression only
+where the locked edit requires it, ducks the instrumental bed under narration,
+and outputs `video/dist/veyra-90s-demo-elevenlabs-master.mp4` with English
+subtitles.
+
 ## Truth boundary
 
 Read `PRODUCT_TRUTH_SHEET.md` before changing any caption or claim. The current
