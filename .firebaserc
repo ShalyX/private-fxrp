@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "project-d79f9e62-d832-4631-9f6"
+  },
+  "targets": {
+    "project-d79f9e62-d832-4631-9f6": {
+      "hosting": {
+        "app": ["veyra-fxrp"]
+      }
+    }
+  }
+}
